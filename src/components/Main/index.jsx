@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-import { RunesList } from '../RunesList'
 import { RuneWords } from '../RuneWords'
 import { Search } from '../Search'
 
@@ -16,7 +15,6 @@ export const Main = () => {
   return (
     <MainContainer>
       <Search />
-      <RunesList />
       <RuneWords />
     </MainContainer>
   )
