@@ -7,7 +7,7 @@ export const RunesListInner = styled.ul`
   color: #fff;
   display: ${({ isHidden }) => (isHidden ? 'none' : 'block')};
   background: #292929;
-  padding: 10px;
+  padding: 1rem;
   max-height: calc(80vh - 60px);
   overflow: auto;
   border-radius: 5px;
@@ -24,6 +24,10 @@ export const RunesListInner = styled.ul`
   ::-webkit-scrollbar-thumb {
     border-radius: 3px;
     background: #720202;
+  }
+
+  @media (max-width: 650px) {
+    padding: 0;
   }
 `
 
@@ -45,6 +49,10 @@ export const RuneNumber = styled.span`
   text-align: right;
   margin-right: 5px;
   opacity: 0.8;
+
+  @media (max-width: 650px) {
+    min-width: 20px;
+  }
 `
 
 export const RuneTitle = styled.span`
@@ -63,11 +71,19 @@ export const RuneTitle = styled.span`
         return '#000'
     }
   }};
+
+  @media (max-width: 650px) {
+    min-width: 35px;
+  }
 `
 export const RuneImg = styled.img`
   width: 30px;
   height: 30px;
   margin: 0 5px;
+
+  @media (max-width: 650px) {
+    margin: 0 5px 0 2px;
+  }
 `
 export const LevelReq = styled.span``
 
@@ -86,7 +102,7 @@ export const RunesList = () => {
           </RuneTitle>
           <RuneImg src={`/images/${item.img}`} alt={item.title}></RuneImg>
           <LevelReq>
-            <span>req. level: </span>
+            <span>req: </span>
             <span>{item.req}</span>
           </LevelReq>
         </RuneItem>

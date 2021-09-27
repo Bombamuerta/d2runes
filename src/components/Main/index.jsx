@@ -8,6 +8,10 @@ const MainContainer = styled.div`
   width: 100%;
   max-width: 95vw;
   padding: 1.5rem;
+
+  @media (max-width: 650px){
+    padding: 1rem 0.5rem;
+  }
 `
 
 export const Main = () => {

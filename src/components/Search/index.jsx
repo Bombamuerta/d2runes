@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import { runes } from '../../data/runes'
 
-// import { RunesList } from '../RunesList'
-import { RuneWords } from '../RuneWords'
-
 import {
   RuneItem,
   RuneTitle,
@@ -13,9 +10,6 @@ import {
   RuneImg,
   RunesListInner,
 } from '../RunesList'
-// import { runes } from '../../data/runes'
-
-// import { RuneItem } from '../RunesList'
 
 const SearchInput = styled.input`
   width: 300px;
@@ -36,19 +30,26 @@ const SearchWrapper = styled.div`
   position: relative;
 `
 
-// const SearchResult = styled.div`
-//   width: 300px;
-//   position: absolute;
-//   top: 30px;
-//   left: 0;
-//   border: 1px solid #550000;
-//   border-top: 0;
-//   z-index: 10;
-//   background: #222222;
-
-//   display: ${({ isHidden }) => (isHidden ? 'none' : 'block')};
-// `
-
+const Drop = styled.div`
+  color: #fff;
+  margin-left: 5px;
+`
+const DropLocation = styled.span`
+  padding-left: 5px;
+  text-transform: capitalize;
+  color: ${({ isNormal, isNightmare, isHell }) => {
+    switch (true) {
+      case isNormal:
+        return 'gold'
+      case isNightmare:
+        return '#de771c'
+      case isHell:
+        return '#e84816'
+      default:
+        return '#000'
+    }
+  }};
+`
 export const Search = () => {
   const [runeName, setRuneName] = useState('')
 
@@ -87,9 +88,19 @@ export const Search = () => {
                 </RuneTitle>
                 <RuneImg src={`/images/${item.img}`} alt={item.title}></RuneImg>
                 <LevelReq>
-                  <span>req. level: </span>
-                  <span>{item.req}</span>
+                  <span>req: </span>
+                  <span>{item.req} lv,</span>
                 </LevelReq>
+                <Drop>
+                  drop:
+                  <DropLocation
+                    isNormal={item.difficulty === 'normal'}
+                    isNightmare={item.difficulty === 'nightmare'}
+                    isHell={item.difficulty === 'hell'}
+                  >
+                    {item.drop}
+                  </DropLocation>
+                </Drop>
               </RuneItem>
             )
           })}
