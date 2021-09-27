@@ -11,18 +11,30 @@ import {
   RunesListInner,
 } from '../RunesList'
 
+// TODO сделать обертку для инпута и позиционировать иконку от нее
+const LensIcon = styled.i`
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: url('/images/icon_lens.svg') center no-repeat;
+  background-size: contain;
+`
+
 const SearchInput = styled.input`
-  width: 300px;
+  width: 100%;
   height: 30px;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   border: 1px solid #550000;
   background: #222222;
   padding: 0 10px;
   color: #fff;
 
-  @media (max-width: 650px) {
-    width: 100%;
+  :focus {
+    border-color: red;
+    caret-color: red;
   }
 `
 
@@ -59,9 +71,10 @@ export const Search = () => {
 
   return (
     <SearchWrapper>
+      <LensIcon />
       <SearchInput
         type='text'
-        placeholder='search runes here'
+        placeholder='Search runes here'
         onChange={handleSearch}
         value={runeName}
         autoComplete='off'

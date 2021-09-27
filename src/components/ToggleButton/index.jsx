@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 
 const ToggleButtonInner = styled.button`
@@ -9,20 +9,14 @@ const ToggleButtonInner = styled.button`
   border-radius: 5px;
   color: #fff;
   font-weight: 700;
-  margin-right: 10px;
+  margin-bottom: 1rem;
   background: #222222;
 `
 
-export const ToggleButton = () => {
-  const [toggleList, setToggleList] = useState(true)
-
-  const handleToggle = () => {
-    setToggleList(!toggleList)
-  }
-
+export const ToggleButton = ({text, toggleLegend}) => {
   return (
-    <ToggleButtonInner onClick={handleToggle}>
-      {toggleList ? 'Show runes' : 'Hide runes'}
+    <ToggleButtonInner onClick={toggleLegend}>
+      {text}
     </ToggleButtonInner>
   )
 }
