@@ -70,7 +70,7 @@ export const Search = () => {
           .filter((rune) => {
             if (runeName === '') {
               return rune
-            } else if (rune.title.startsWith(runeName)) {
+            } else if (rune.title.startsWith(runeName.toLowerCase())) {
               return rune
             }
           })
