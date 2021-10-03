@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
+// import { Children } from 'react'
 import styled from 'styled-components/macro'
 import { runes } from '../../data/runes'
+import { RuneCard } from '../RuneCard'
 
 import {
   RuneItem,
@@ -10,6 +12,8 @@ import {
   RuneImg,
   RunesListInner,
 } from '../RunesList'
+
+// import { RuneCard } from '../RuneCard'
 
 // TODO сделать обертку для инпута и позиционировать иконку от нее
 const LensIcon = styled.i`
@@ -46,6 +50,7 @@ const Drop = styled.div`
   color: #fff;
   margin-left: 5px;
 `
+
 const DropLocation = styled.span`
   padding-left: 5px;
   text-transform: capitalize;
@@ -67,57 +72,102 @@ export const Search = () => {
 
   const handleSearch = (e) => {
     setRuneName(e.target.value)
+    setShowCard(false)
+  }
+
+  const [showCard, setShowCard] = useState(false)
+
+  const toggleCard = (item) => {
+    setShowCard(true)
+    console.log(item)
+    setRuneTitle(item.title)
+    setWeapons(item.stats.weapons)
+    setArmor(item.stats.armor_helms)
+    setShields(item.stats.shields)
+    setRecipe(item.recipe)
+  }
+
+  const [runeTitle, setRuneTitle] = useState('')
+  const [weapons, setWeapons] = useState('')
+  const [armor, setArmor] = useState('')
+  const [shields, setShields] = useState('')
+  const [recipe, setRecipe] = useState('')
+  // TODO эта пусть чекает руну для выбора в список.
+  // пусть пока лежит
+  // const testFoo = () => {
+  //   console.log('bdsbdh')
+  // }
+
+  const closeCard = () => {
+    setShowCard(false)
+    console.log('click')
   }
 
   return (
-    <SearchWrapper>
-      <LensIcon />
-      <SearchInput
-        type='text'
-        placeholder='Search runes here'
-        onChange={handleSearch}
-        value={runeName}
-        autoComplete='off'
-      />
-      <RunesListInner>
-        {runes
-          .filter((rune) => {
-            if (runeName === '') {
-              return rune
-            } else if (rune.title.startsWith(runeName.toLowerCase())) {
-              return rune
-            }
-          })
-          .map((item) => {
-            return (
-              <RuneItem key={item.id}>
-                <RuneNumber>{item.id}.</RuneNumber>
-                <RuneTitle
-                  isNormal={item.difficulty === 'normal'}
-                  isNightmare={item.difficulty === 'nightmare'}
-                  isHell={item.difficulty === 'hell'}
-                >
-                  {item.title}
-                </RuneTitle>
-                <RuneImg src={`/images/${item.img}`} alt={item.title}></RuneImg>
-                <LevelReq>
-                  <span>req: </span>
-                  <span>{item.req} lv,</span>
-                </LevelReq>
-                <Drop>
-                  drop:
-                  <DropLocation
+    <Fragment>
+      <SearchWrapper>
+        <LensIcon />
+        <SearchInput
+          type='text'
+          placeholder='Search runes here'
+          onChange={handleSearch}
+          value={runeName}
+          autoComplete='off'
+        />
+        {/* вынести в отдельный компонент если получится */}
+        <RunesListInner>
+          {runes
+            .filter((rune) => {  // eslint-disable-line
+              if (runeName === '') {
+                return rune
+              } else if (rune.title.startsWith(runeName.toLowerCase())) {
+                return rune
+              }
+            })
+            .map((item) => {
+              return (
+                <RuneItem key={item.id} onClick={() => toggleCard(item)}>
+                  <RuneNumber>{item.id}.</RuneNumber>
+                  <RuneTitle
                     isNormal={item.difficulty === 'normal'}
                     isNightmare={item.difficulty === 'nightmare'}
                     isHell={item.difficulty === 'hell'}
                   >
-                    {item.drop}
-                  </DropLocation>
-                </Drop>
-              </RuneItem>
-            )
-          })}
-      </RunesListInner>
-    </SearchWrapper>
+                    {item.title}
+                  </RuneTitle>
+                  <RuneImg
+                    src={`/images/${item.img}`}
+                    alt={item.title}
+                  ></RuneImg>
+                  <LevelReq>
+                    <span>req: </span>
+                    <span>{item.req} lv,</span>
+                  </LevelReq>
+                  <Drop>
+                    drop:
+                    <DropLocation
+                      isNormal={item.difficulty === 'normal'}
+                      isNightmare={item.difficulty === 'nightmare'}
+                      isHell={item.difficulty === 'hell'}
+                    >
+                      {item.drop}
+                    </DropLocation>
+                  </Drop>
+                </RuneItem>
+              )
+            })}
+          {showCard && (
+            <RuneCard
+              closeCard={closeCard}
+              runeTitle={runeTitle}
+              weapons={weapons}
+              armor={armor}
+              shields={shields}
+              recipe={recipe}
+            />
+          )}
+        </RunesListInner>
+      </SearchWrapper>
+    </Fragment>
   )
 }

@@ -7,7 +7,7 @@ const HeaderContainer = styled.div`
   font-size: 1.5rem;
   color: #fff;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   align-items: center;
 `
 
@@ -16,8 +16,11 @@ const HeaderInner = styled.div`
   padding: 1rem 2rem;
 `
 
-export const Header = ({text}) => (
-  <HeaderContainer>
+export const Header = ({ text }) => {
+
+  return (
+    <HeaderContainer>
       <HeaderInner>{text}</HeaderInner>
-  </HeaderContainer>
-)
+    </HeaderContainer>
+  )
+}

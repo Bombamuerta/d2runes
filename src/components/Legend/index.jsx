@@ -13,6 +13,11 @@ const LegendWrapper = styled.div`
   display: ${({ isHidden }) => (isHidden ? 'none' : 'block')};
   flex-wrap: wrap;
   margin-bottom: 1rem;
+  width: 300px;
+
+  @media (max-width: 650px) {
+    width: 150px;
+  }
 `
 
 // const CloseLegend = styled.div`
@@ -58,7 +63,7 @@ const LegendTitle = styled.div`
 `
 
 export const Legend = () => {
-  const [hidden, setHidden] = useState(false)
+  const [hidden, setHidden] = useState(true)
 
   const toggleLegend = () => {
     setHidden(!hidden)

@@ -8,11 +8,12 @@ export const RunesListInner = styled.ul`
   display: ${({ isHidden }) => (isHidden ? 'none' : 'block')};
   background: #292929;
   padding: 1rem;
-  max-height: calc(80vh - 60px);
+  max-height: calc(80vh - 300px);
   overflow: auto;
   border-radius: 5px;
   border: 2px solid #550000;
   margin-bottom: 10px;
+  position: relative;
 
   ::-webkit-scrollbar {
     width: 7px;

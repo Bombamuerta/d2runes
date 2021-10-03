@@ -5,7 +5,13 @@ export const runes = [
     img: 'el.png',
     req: 11,
     difficulty: 'normal',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '+50 to Attack Rating, +1 to Light Radius',
+      armor_helms: '+15 Defence, +1 to Light Radius',
+      shields: '+15 Defence, +1 to Light Radius',
+    },
+    recipe: '3 El >> Eld',
   },
   {
     id: 2,
@@ -13,7 +19,13 @@ export const runes = [
     img: 'eld.png',
     req: 11,
     difficulty: 'normal',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '+75% Damage To Undead, +50 Att. Rating Against Undead',
+      armor_helms: '+15% Slower Stamina Drain',
+      shields: '7% Increased Chance of Blocking',
+    },
+    recipe: '3 Eld >> Tir',
   },
   {
     id: 3,
@@ -21,7 +33,13 @@ export const runes = [
     img: 'tir.png',
     req: 13,
     difficulty: 'normal',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '+2 To Mana After Each Kill',
+      armor_helms: '+2 To Mana After Each Kill',
+      shields: '+2 To Mana After Each Kill',
+    },
+    recipe: '3 Tir >> Nef',
   },
   {
     id: 4,
@@ -29,7 +47,13 @@ export const runes = [
     img: 'nef.png',
     req: 13,
     difficulty: 'normal',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: 'Knockback',
+      armor_helms: '+30 Defense Vs. Missile',
+      shields: '+30 Defense Vs. Missile',
+    },
+    recipe: '3 Nef >> Eth',
   },
   {
     id: 5,
@@ -37,7 +61,13 @@ export const runes = [
     img: 'eth.png',
     req: 15,
     difficulty: 'normal',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '-25% Target Defense',
+      armor_helms: 'Regenerate Mana 15%',
+      shields: 'Regenerate Mana 15%',
+    },
+    recipe: '3 Eth >> Ith',
   },
   {
     id: 6,
@@ -45,7 +75,13 @@ export const runes = [
     img: 'ith.png',
     req: 15,
     difficulty: 'normal',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '+9 to Maximum Damage',
+      armor_helms: '15% Damage Taken Goes to Mana',
+      shields: '15% Damage Taken Goes to Mana',
+    },
+    recipe: '3 Ith >> Tal',
   },
   {
     id: 7,
@@ -53,7 +89,13 @@ export const runes = [
     img: 'tal.png',
     req: 17,
     difficulty: 'normal',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '75 Poison damage over 5 seconds',
+      armor_helms: '+30% Poison Resistance',
+      shields: '+35% Poison Resistance',
+    },
+    recipe: '3 Tal >> Ral',
   },
   {
     id: 8,
@@ -61,7 +103,13 @@ export const runes = [
     img: 'ral.png',
     req: 19,
     difficulty: 'normal',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '+5-30 Fire Damage',
+      armor_helms: '+30% Fire Resistance',
+      shields: '+35% Fire Resistance',
+    },
+    recipe: '3 Ral >> Ort',
   },
   {
     id: 9,
@@ -69,7 +117,13 @@ export const runes = [
     img: 'ort.png',
     req: 21,
     difficulty: 'nightmare',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '+1-50 Lightning Damage',
+      armor_helms: '+30% Lightning Resistance',
+      shields: '+35% Lightning Resistance',
+    },
+    recipe: '3 Ort >> Thul',
   },
   {
     id: 10,
@@ -77,7 +131,13 @@ export const runes = [
     img: 'thul.png',
     req: 23,
     difficulty: 'nightmare',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '+3-14 Cold Damage (Cold Length 3 seconds)',
+      armor_helms: '+30% Cold Resistance',
+      shields: '+35% Cold Resistance',
+    },
+    recipe: '3 Thul + Chipped Topaz >> Amn',
   },
   {
     id: 11,
@@ -85,7 +145,13 @@ export const runes = [
     img: 'amn.png',
     req: 25,
     difficulty: 'nightmare',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '7% Life Stolen Per Hit',
+      armor_helms: 'Attacker takes 14 damage',
+      shields: 'Attacker takes 14 damage',
+    },
+    recipe: '3 Amn + Chipped  Amethyst  >>  Sol',
   },
   {
     id: 12,
@@ -93,7 +159,13 @@ export const runes = [
     img: 'sol.png',
     req: 27,
     difficulty: 'nightmare',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '+9 to Minimum Damage',
+      armor_helms: '-7 Damage Taken',
+      shields: '-7 Damage Taken',
+    },
+    recipe: '3 Sol + Chipped Sapphire >> Nef',
   },
   {
     id: 13,
@@ -101,7 +173,13 @@ export const runes = [
     img: 'shael.png',
     req: 29,
     difficulty: 'nightmare',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '20% Increased Attack Speed',
+      armor_helms: '20% Faster Hit Recovery',
+      shields: '20%  Faster Block Rate',
+    },
+    recipe: '3 Shael + Chipped Ruby >> Dol',
   },
   {
     id: 14,
@@ -109,7 +187,13 @@ export const runes = [
     img: 'dol.png',
     req: 31,
     difficulty: 'nightmare',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '25% Chance that Hit Causes Monster to Flee',
+      armor_helms: '+7 Replenish Life',
+      shields: '+7 Replenish Life',
+    },
+    recipe: '3 Dol + Chipped Emerald >> Hel',
   },
 
   {
@@ -118,7 +202,13 @@ export const runes = [
     img: 'hel.png',
     req: 'n/a',
     difficulty: 'nightmare',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '-20% Requirements',
+      armor_helms: '-15% Requirements',
+      shields: '-15% Requirements',
+    },
+    recipe: '3 Nef + Chipped Diamond >> Io',
   },
   {
     id: 16,
@@ -126,7 +216,13 @@ export const runes = [
     img: 'io.png',
     req: 35,
     difficulty: 'nightmare',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '+10 Vitality',
+      armor_helms: '+10 Vitality',
+      shields: '+10 Vitality',
+    },
+    recipe: '3 Io + Flawed Topaz >> Lum',
   },
   {
     id: 17,
@@ -134,7 +230,13 @@ export const runes = [
     img: 'lum.png',
     req: 37,
     difficulty: 'hell',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '+10 Energy',
+      armor_helms: '+10 Energy',
+      shields: '+10 Energy',
+    },
+    recipe: '3 Lum + Flawed Amethyst  >> Ko',
   },
   {
     id: 18,
@@ -142,7 +244,13 @@ export const runes = [
     img: 'ko.png',
     req: 39,
     difficulty: 'hell',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '+10 Dexterity',
+      armor_helms: '+10 Dexterity',
+      shields: '+10 Dexterity',
+    },
+    recipe: '3 Ko + Flawed Sapphire >> Fal',
   },
   {
     id: 19,
@@ -150,7 +258,13 @@ export const runes = [
     img: 'fal.png',
     req: 41,
     difficulty: 'hell',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '+10 Strength',
+      armor_helms: '+10 Strength',
+      shields: '+10 Strength',
+    },
+    recipe: '3 Fal + Flawed Ruby >> Lem',
   },
   {
     id: 20,
@@ -158,7 +272,13 @@ export const runes = [
     img: 'lem.png',
     req: 43,
     difficulty: 'hell',
-    drop: 'countess'
+    drop: 'countess',
+    stats: {
+      weapons: '+75% Extra Gold from Monsters',
+      armor_helms: '+50% Extra Gold from Monsters',
+      shields: '+50% Extra Gold from Monsters',
+    },
+    recipe: '3 Lem + Flawed Emerald >> Pul',
   },
   {
     id: 21,
@@ -166,7 +286,13 @@ export const runes = [
     img: 'pul.png',
     req: 45,
     difficulty: 'hell',
-    drop: 'LK, countess'
+    drop: 'LK, countess',
+    stats: {
+      weapons: '+75% Damage to Demons, +100 AR against Demons',
+      armor_helms: '+30% Defense',
+      shields: '+30% Defense',
+    },
+    recipe: '2 Pul + Flawed Diamond >> Um',
   },
   {
     id: 22,
@@ -174,7 +300,13 @@ export const runes = [
     img: 'um.png',
     req: 47,
     difficulty: 'hell',
-    drop: 'LK, countess'
+    drop: 'LK, countess',
+    stats: {
+      weapons: '25% Chance of Open Wounds',
+      armor_helms: '+15% Resist All',
+      shields: '+22% Resist All',
+    },
+    recipe: '2 Um + Topaz  >> Mal',
   },
   {
     id: 23,
@@ -182,7 +314,13 @@ export const runes = [
     img: 'mal.png',
     req: 49,
     difficulty: 'hell',
-    drop: 'LK, countess'
+    drop: 'LK, countess',
+    stats: {
+      weapons: 'Prevent Monster Healing',
+      armor_helms: 'Reduce Magic Damage by 7',
+      shields: 'Reduce Magic Damage by 7',
+    },
+    recipe: '2 Mal + Amethyst >> Ist',
   },
   {
     id: 24,
@@ -190,7 +328,13 @@ export const runes = [
     img: 'ist.png',
     req: 51,
     difficulty: 'hell',
-    drop: 'LK, countess'
+    drop: 'LK, countess',
+    stats: {
+      weapons: '+30% Better Chance of Finding Magical Items',
+      armor_helms: '+25% Better Chance of Finding Magical Items',
+      shields: ' +25% Better Chance of Finding Magical Items',
+    },
+    recipe: '2 Ist + Sapphire >> Gul',
   },
   {
     id: 25,
@@ -198,7 +342,13 @@ export const runes = [
     img: 'gul.png',
     req: 53,
     difficulty: 'hell',
-    drop: 'LK, countess'
+    drop: 'LK, countess',
+    stats: {
+      weapons: '20% Bonus To Attack Rating',
+      armor_helms: '5% To Maximum Poison Resist',
+      shields: '5% To Maximum Poison Resist',
+    },
+    recipe: '2 Gul + Ruby  >> Vex',
   },
   {
     id: 26,
@@ -206,7 +356,13 @@ export const runes = [
     img: 'vex.png',
     req: 55,
     difficulty: 'hell',
-    drop: 'LK, andariel'
+    drop: 'LK, andariel',
+    stats: {
+      weapons: '7% Mana Leech',
+      armor_helms: '+5 to Max Fire Resist',
+      shields: '+5 to Max Fire Resist',
+    },
+    recipe: '2 Vex + Emetrald >> Ohm',
   },
   {
     id: 27,
@@ -214,7 +370,13 @@ export const runes = [
     img: 'ohm.png',
     req: 57,
     difficulty: 'hell',
-    drop: 'LK, andariel'
+    drop: 'LK, andariel',
+    stats: {
+      weapons: '+50% Damage',
+      armor_helms: '+5 to Max. Resist Cold',
+      shields: '+5 to Max. Resist Cold',
+    },
+    recipe: '2 Ohm + Diamond >> Lo',
   },
   {
     id: 28,
@@ -222,7 +384,13 @@ export const runes = [
     img: 'lo.png',
     req: 59,
     difficulty: 'hell',
-    drop: 'LK, andariel'
+    drop: 'LK, andariel',
+    stats: {
+      weapons: '20% Chance of Deadly Strike',
+      armor_helms: '+5 to Max. Resist Lightning',
+      shields: '+5 to Max. Resist Lightning',
+    },
+    recipe: '2 Lo + Flawless Topaz >> Sur',
   },
   {
     id: 29,
@@ -230,7 +398,13 @@ export const runes = [
     img: 'sur.png',
     req: 61,
     difficulty: 'hell',
-    drop: 'LK, duriel'
+    drop: 'LK, duriel',
+    stats: {
+      weapons: '20% Chance of Hit Blinds Target',
+      armor_helms: '+5% total Mana',
+      shields: '+50 Mana',
+    },
+    recipe: '2 Sur + Flawless Amethyst >> Ber',
   },
   {
     id: 30,
@@ -238,7 +412,13 @@ export const runes = [
     img: 'ber.png',
     req: 63,
     difficulty: 'hell',
-    drop: 'LK, duriel'
+    drop: 'LK, duriel',
+    stats: {
+      weapons: '20% Chance of Crushing Blow',
+      armor_helms: 'Damage Reduced by 8%',
+      shields: 'Damage Reduced by 8%',
+    },
+    recipe: '2 Ber + Flawless Sapphire >> Jah',
   },
   {
     id: 31,
@@ -246,7 +426,13 @@ export const runes = [
     img: 'jah.png',
     req: 65,
     difficulty: 'hell',
-    drop: 'mephisto'
+    drop: 'mephisto',
+    stats: {
+      weapons: 'Ignores Target Defense',
+      armor_helms: 'Increase Maximum Life 5%',
+      shields: '+50 Life',
+    },
+    recipe: '2 Jah + Flawless Ruby  >> Cham',
   },
   {
     id: 32,
@@ -254,7 +440,13 @@ export const runes = [
     img: 'cham.png',
     req: 67,
     difficulty: 'hell',
-    drop: 'mephisto'
+    drop: 'mephisto',
+    stats: {
+      weapons: '32% Chance of Hit Freezing Target for 3 seconds',
+      armor_helms: 'Cannot be Frozen',
+      shields: 'Cannot be Frozen',
+    },
+    recipe: '2 Cham + Flawless Emerald >> Zod',
   },
   {
     id: 33,
@@ -262,6 +454,12 @@ export const runes = [
     img: 'zod.png',
     req: 69,
     difficulty: 'hell',
-    drop: 'baal'
+    drop: 'baal',
+    stats: {
+      weapons: 'Indestructible',
+      armor_helms: 'Indestructible',
+      shields: 'Indestructible',
+    },
+    recipe: 'no way to upgrade... yet ;)',
   },
 ]

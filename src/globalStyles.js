@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: inherit;
     cursor: pointer;
     font-size: inherit;
+    border: 0;
   }
 `
 
