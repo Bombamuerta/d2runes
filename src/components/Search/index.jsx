@@ -1,7 +1,8 @@
-import React, { Fragment, useState } from 'react'
-// import { Children } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
+
 import { runes } from '../../data/runes'
+
 import { RuneCard } from '../RuneCard'
 
 import {
@@ -13,15 +14,12 @@ import {
   RunesListInner,
 } from '../RunesList'
 
-// import { RuneCard } from '../RuneCard'
-
-// TODO сделать обертку для инпута и позиционировать иконку от нее
 const LensIcon = styled.i`
   width: 15px;
   height: 15px;
   position: absolute;
   top: 8px;
-  right: 10px;
+  right: 15px;
   background: url('/images/icon_lens.svg') center no-repeat;
   background-size: contain;
 `
@@ -79,32 +77,28 @@ export const Search = () => {
 
   const toggleCard = (item) => {
     setShowCard(true)
-    console.log(item)
-    setRuneTitle(item.title)
-    setWeapons(item.stats.weapons)
-    setArmor(item.stats.armor_helms)
-    setShields(item.stats.shields)
-    setRecipe(item.recipe)
+    setRuneInfo({
+      runeTitle: item.title,
+      weapons: item.stats.weapons,
+      armor: item.stats.armor_helms,
+      shields: item.stats.shields,
+      recipe: item.recipe,
+    })
   }
 
-  const [runeTitle, setRuneTitle] = useState('')
-  const [weapons, setWeapons] = useState('')
-  const [armor, setArmor] = useState('')
-  const [shields, setShields] = useState('')
-  const [recipe, setRecipe] = useState('')
-  // TODO эта пусть чекает руну для выбора в список.
-  // пусть пока лежит
-  // const testFoo = () => {
-  //   console.log('bdsbdh')
-  // }
+  const [runeInfo, setRuneInfo] = useState({
+    runeTitle: '',
+    weapons: '',
+    armor: '',
+    shields: '',
+    recipe: '',
+  })
 
   const closeCard = () => {
     setShowCard(false)
-    console.log('click')
   }
 
   return (
-    <Fragment>
       <SearchWrapper>
         <LensIcon />
         <SearchInput
@@ -117,7 +111,7 @@ export const Search = () => {
         {/* вынести в отдельный компонент если получится */}
         <RunesListInner>
           {runes
-            .filter((rune) => {  // eslint-disable-line
+            .filter((rune) => { // eslint-disable-line
               if (runeName === '') {
                 return rune
               } else if (rune.title.startsWith(runeName.toLowerCase())) {
@@ -159,15 +153,10 @@ export const Search = () => {
           {showCard && (
             <RuneCard
               closeCard={closeCard}
-              runeTitle={runeTitle}
-              weapons={weapons}
-              armor={armor}
-              shields={shields}
-              recipe={recipe}
+              runeInfo={runeInfo}
             />
           )}
         </RunesListInner>
       </SearchWrapper>
-    </Fragment>
   )
 }

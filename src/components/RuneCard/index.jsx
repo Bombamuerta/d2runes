@@ -1,11 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-// import { runes } from '../../data/runes'
-
 const RuneCardInner = styled.div`
   width: 350px;
-  /* height: 200px; */
   background-color: #222;
   color: white;
   position: fixed;
@@ -18,7 +15,7 @@ const RuneCardInner = styled.div`
   z-index: 10;
 
   @media (max-width: 650px) {
-    bottom: 12%;
+    bottom: 10px;
     top: auto;
     width: 92%;
     left: 50%;
@@ -30,12 +27,9 @@ const StatsBox = styled.div`
   flex-direction: column;
 
   span {
-    :nth-child(even) {
-      /* padding-left: 3px; */
-    }
     :nth-child(6) {
       padding-bottom: 5px;
-      border-bottom: 1px solid #550000;
+      border-bottom: 1px solid #9a1111;
     }
   }
 `
@@ -72,30 +66,24 @@ const RuneTitle = styled.span`
   line-height: 2rem;
   font-size: 1.5rem;
 `
-// const Row = styled.div``
 
-export const RuneCard = ({
-  closeCard,
-  weapons,
-  armor,
-  shields,
-  runeTitle,
-  recipe,
-}) => {
+const InfoText = styled.span``
+
+export const RuneCard = ({ closeCard, runeInfo }) => {
   return (
     <RuneCardInner>
       <CardInner>
-        <RuneTitle>{runeTitle}</RuneTitle>
+        <RuneTitle>{runeInfo.runeTitle}</RuneTitle>
         <CloseButton onClick={closeCard} />
         <StatsBox>
           <Title>Weapons</Title>
-          <span>{weapons}</span>
+          <InfoText>{runeInfo.weapons}</InfoText>
           <Title>Armors/Helms</Title>
-          <span>{armor}</span>
+          <InfoText>{runeInfo.armor}</InfoText>
           <Title>Shields</Title>
-          <span>{shields}</span>
+          <InfoText>{runeInfo.shields}</InfoText>
           <Title>Cube</Title>
-          <span>{recipe}</span>
+          <InfoText>{runeInfo.recipe}</InfoText>
         </StatsBox>
       </CardInner>
     </RuneCardInner>
