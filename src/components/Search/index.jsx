@@ -42,6 +42,11 @@ const SearchInput = styled.input`
 
 const SearchWrapper = styled.div`
   position: relative;
+  width: 50%;
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
 `
 
 const Drop = styled.div`

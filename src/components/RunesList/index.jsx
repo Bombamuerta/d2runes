@@ -8,7 +8,7 @@ export const RunesListInner = styled.ul`
   display: ${({ isHidden }) => (isHidden ? 'none' : 'block')};
   background: #292929;
   padding: 1rem;
-  max-height: calc(80vh - 300px);
+  max-height: 70vh;
   overflow: auto;
   border-radius: 5px;
   border: 2px solid #550000;
@@ -29,6 +29,7 @@ export const RunesListInner = styled.ul`
 
   @media (max-width: 650px) {
     padding: 0;
+    max-height: calc(80vh - 300px);
   }
 `
 
